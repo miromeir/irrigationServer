@@ -5,7 +5,7 @@ import os
 
 app_config = {
     'SECRET_KEY': 'secret-key-goes-here',
-    'SQLALCHEMY_DATABASE_URI': 'postgresql:///flask_db',
+    'SQLALCHEMY_DATABASE_URI': 'postgresql://miromeir:kUjh5rvx@database-1.cgkckwgsr4d3.us-east-1.rds.amazonaws.com:5432',
     'REMEMBER_COOKIE_DOMAIN': ".irrigation.cc",
     'MQTT_BROKER_URL': '127.0.0.1',
     'MQTT_BROKER_PORT': 1883,
