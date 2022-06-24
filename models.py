@@ -20,7 +20,6 @@ class User(db.Model, UserMixin):
 
 @config_item
 def config(app):
-   print("configured models")
    db.app=app
    db.init_app(app)
    migrate = Migrate(app, db)
