@@ -1,5 +1,7 @@
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
+from config_init import config_item
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
 class User(db.Model, UserMixin):
@@ -15,3 +17,11 @@ class User(db.Model, UserMixin):
 
    def __repr__(self):
       return f'<User:{self.id}>'
+
+@config_item
+def config(app):
+   print("configured models")
+   db.app=app
+   db.init_app(app)
+   migrate = Migrate(app, db)
+   db.create_all()

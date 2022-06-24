@@ -9,15 +9,20 @@
             "type": "python",
             "request": "launch",
             "module": "flask",
+            "python": "${command:python.interpreterPath}",
             "env": {
                 "FLASK_APP": "main.py",
-                "FLASK_ENV": "development"
+                "FLASK_ENV": "development",
+                "ENV": "DEV",
             },
             "args": [
                 "run",
+                "--cert=adhoc",
                 "--no-debugger",
                 "--host",
-                "0.0.0.0"
+                "0.0.0.0",
+                
+                
             ],
             "jinja": true,
             "justMyCode": true

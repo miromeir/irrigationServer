@@ -89,7 +89,7 @@ def devicestatus():
         pass
 
     mqtt.unsubscribe(topic="{}/on".format(topic))
-    if redis_device_on.get(topic) == "pending":
+    if redis_device_on.get(topic) == b"pending":
          return "offline", 400
 
     return redis_device_on.get(topic), 200
